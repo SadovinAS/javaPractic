@@ -1,17 +1,66 @@
 public class Main {
-    /**
-     * @author - Садовин Александр
-     * @version 1.0.0
-     * @param a Первое Слагаемое
-     * @param b Второе Слагаемое
-     * @return Сумма Слагаемых a и b
-     */
-    public static int sum(int a , int b) {
-        return a + b;
-    }
     public static void main(String[] args) {
-        int a = 5;
-        int b = 3;
-        System.out.println(sum(a, b));
+        int a = 1; // 1. оператор =
+        a += 2; // оператор += -> a = 3
+        a -= 1; // оператор -= -> a = 2
+        a *= 4; // оператор *= -> a = 8
+        a /= 2; // оператор /= -> a = 4
+        a %= 3; // оператор /= -> a = 1
+
+        int b = ((a > 2) ? 13 : 0); // 2. оператор ?: если a > 2, то b = 13, иначе b = 0
+
+        boolean statement1 = (a > 0 || b > 0); // 3. оператор || условие или
+
+        boolean statement2 = (a > 0 && b > 0); // 4. оператор && условие и
+
+        int c = 13;
+        int d = 15;
+        int e = c | d; // 5. Оператор | побитовое или
+
+        int f = c ^ d; // 6. Оператор | побитовое исколючающее или (XOR)
+
+        int g = c & d; // 7. Оператор | побитовое и
+
+        boolean statement3 = (g == f); // 8. оператор ==
+
+        boolean state1 = (g > f); // 9. оператор >
+        boolean state2 = (g >= f); // оператор >=
+        boolean state3 = (g < f); // оператор <
+        boolean state4 = (g <= f); // оператор <=
+
+        int x1 = 5;       // 00000101
+        int y1 = x1 << 1; // 00001010
+        int x2 = -8;      // 11111000
+        int y2 = x2 >> 1; // 11111100
+        int x3 = -8;      // 11111000
+        int y3 = x3 >>> 1;// 01111100
+
+        int k1 = x1 + x2; // 11. оператор +
+        int k2 = x1 - x2; // оператор -
+
+        int l1 = 20;
+        int l2 = 4;
+        int l3 = 6;
+        int p1 = l1 * l2; // 12. оператор *
+        int p2 = l1 / l2; // оператор /
+        int p3 = l1 % l3; // оператор %
+
+        int m = 12;
+        m++; // оператор ++, прибаляет 1
+        m--; // оператор --, убавляет 1
+        ++m; // оператор ++, прибаляет 1
+        --m; // оператор --, убавляет 1
+        int t = ~m; // оператор ~, побитовое отрицание
+        boolean s1 = true;
+        boolean s2 = !s1; // оператор !, отрицание
+
+        String str1 = "Hello ";
+        String str2 = "World";
+
+        String res1 = str1 + str2; // оператор +
+
+        res1 += "!!!"; // оператор +=
+
+        boolean state5 = (str1 == str2); // оператор ==
     }
 }
