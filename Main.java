@@ -1,17 +1,35 @@
-public class Main {
-    /**
-     * @author - Садовин Александр
-     * @version 1.0.0
-     * @param a Первое Слагаемое
-     * @param b Второе Слагаемое
-     * @return Сумма Слагаемых a и b
-     */
-    public static int sum(int a , int b) {
-        return a + b;
+class Shape {
+}
+class Circle extends Shape {
+    double radius;
+    Circle(double r) {
+        radius = r;
     }
+}
+class Square extends Shape {
+    double width;
+    Square(double w) {
+        width = w;
+    }
+}
+
+public class Main {
+    public static void findFigType(Shape s){
+        if (s instanceof Circle) {
+            System.out.println("Круг");
+        }
+        else if (s instanceof Square) {
+            System.out.println("Квадрат");
+        }
+        else{
+            System.out.println("Это не фигура");
+        }
+    }
+
     public static void main(String[] args) {
-        int a = 5;
-        int b = 3;
-        System.out.println(sum(a, b));
+        Shape shape1 = new Circle(5);
+        Shape shape2 = null;
+        findFigType(shape1); // Круг
+        findFigType(shape2); // Это не фигура
     }
 }
