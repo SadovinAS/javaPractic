@@ -1,32 +1,31 @@
-abstract class Figure {
-    public abstract double getVolume();
+interface Shape {
+    double area();
 }
-class Sphere extends Figure {
-    private double R;
-    public Sphere(double rad) {
-        this.R = rad;
+class Circle implements Shape {
+    double radius;
+    Circle(double r) {
+        radius = r;
     }
-    @Override
-    public double getVolume() {
-        return 4.0 / 3 * 3.14159365 * R * R * R;
+    public double area() {
+        return 3.14159265 * radius * radius;
     }
 }
-class Cube extends Figure {
-    private double A;
-    public Cube(double len) {
-        this.A = len;
+class Square implements Shape {
+    double side;
+    Square(double s) {
+        side = s;
     }
-    @Override
-    public double getVolume() {
-        return A * A * A;
+    public double area() {
+        return side * side;
     }
 }
 public class Main {
     public static void main(String[] args) {
-        Figure f1 = new Sphere(2.5);
-        Figure f2 = new Cube(5);
-
-        System.out.println(f1.getVolume());
-        System.out.println(f2.getVolume());
+        Shape shape1 = new Circle(5);
+        Shape shape2 = new Square(4);
+        var shapes = new Shape[]{shape1, shape2};
+        for (var s : shapes) {
+            System.out.println(s.area());
+        }
     }
 }
